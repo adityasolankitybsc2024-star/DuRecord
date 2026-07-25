@@ -1,0 +1,47 @@
+{% extends "homepage.html" %}
+{% load static %}
+{% block extracss %}
+    <link rel="stylesheet" href="{% static 'Data.css' %}">
+{% endblock extracss %}
+{% block header %}
+    {% if type == "view" %}
+        {% for I in Info %}
+            <div class="div">
+                <span class="span">{{I.name}}:</span>
+                <h1 class="h1">{{I.value}}</h1>
+            </div>
+        {% endfor %}
+        <div class="div">
+            <span class="span">Hours:</span>
+            <h1 class="h1">{{Hours}}</h1>
+        </div>
+        <div class="div" id="Back" data-url="{% url 'Homepage' %}">Back</div>
+        {% else %}
+        {% for I in Info %}
+            <form class="div">
+                <label for="date" class="span">{{I.name}}:(Change to edit)</label>
+                <input type="{{I.type}}" class="h1" name="{{I.nn}}" value="{{I.value}}">
+            </form>
+        {% endfor %}
+        <div class="div" id="Back" data-url="{% url 'Datapane' Data.id 'view' %}">Cancel</div>
+    {% endif %}
+{% endblock header %}
+{% block main %}
+    {% if type == "view" %}
+        <div id="description">
+            <span id="label">Work Done:-</span>
+            <p id="answer">{{Data.WorkDone}}</p>
+            <div id="Edit"><span data-url="{% url 'Datapane' Data.id 'edit' %}">Edit?</span></div>
+        </div>
+    {% else %}
+        <form id="description">
+            {% csrf_token %}
+            <label for="WD" id="label">Work Done:-(Change to edit)</label>
+            <textarea id="answer" name="WD">{{Data.WorkDone}}</textarea>
+            <div id="Edit"><span data-url="{% url 'Datapane' Data.id 'edit' %}">Submit</span></div>
+        </form>
+    {% endif %}
+{% endblock main %}
+{% block extrajs %}
+    <script src="{% static 'Data.js' %}"></script>
+{% endblock extrajs %}

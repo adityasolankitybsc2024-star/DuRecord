@@ -1,0 +1,98 @@
+header h1{
+    height: 90%;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header span{
+    height: 90%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    transition: transform 300ms linear, color 300ms linear;
+}
+header span:hover{
+    transform: scale(1.1);
+    color: greenyellow;
+    cursor: pointer;
+}
+#bak{
+    height: calc(0.1*80vh);
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: rgb(53, 109, 221);
+    font-size: 1.5vw;
+}
+#bak span{
+    height: auto;
+    width: auto;
+    transition: transform 300ms linear, color 300ms linear;
+}
+#bak span:hover{
+    color: orange;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+main section{
+    height: calc(0.8*80vh);
+    width: 90%;
+    display: grid;
+    grid-template-columns: 45% 50%;
+    grid-template-rows: 90%;
+    justify-content: space-evenly;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: orange;
+    border: 2px solid rgb(53, 109, 221);
+    border-radius: 20px;
+}
+#UserImg{
+    height: 100%;
+    width: 100%;
+    border: 2px solid rgb(53, 109, 221);
+    border-radius: 20px;
+}
+.data{
+    height: 100%;
+    width: 100%;
+    color: rgb(53, 109, 221);
+    font-size: 2.2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+.data li{
+    height: calc((1/7)*100%);
+    width: 100%;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+@media screen and (orientation:portrait) {
+    header h1{
+        font-size: 4vw;
+    }
+    header span{
+        font-size: 4vw;
+    }
+    #bak{
+        height: calc(0.02*80vh);
+        font-size: 4vw;
+    }
+    main section{
+        grid-template-columns: 95%;
+        grid-template-rows: 40% 50%;
+    }
+    .data{
+        font-size: 4vw;
+    }
+}

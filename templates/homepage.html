@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'homepage.css' %}">
+    {% block extracss %}
+      
+    {% endblock extracss %}
+    <title>Project Duration Record Keeper</title>
+</head>
+<body>
+    {% if not User %}
+        <div id="login">
+            {% for input in Inputs %}
+                <div class="body">
+                    <h1>{{input.type}}</h1>
+                    <form enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% for inp in input.inputs %}
+                            {% if inp.type == "file" %}
+                                <div class="inpu">
+                                    <label for="{{inp.alias}}">{{inp.name}} :-</label>
+                                    <input type="{{inp.type}}" name="{{inp.alias}}" id="{{inp.alias}}" accept="image/*" required>
+                                </div>
+                            {% elif inp.alias == "topic" %}
+                                <div class="inpu">
+                                    <label for="{{inp.alias}}">{{inp.name}} :-</label>
+                                    <input type="{{inp.type}}" name="{{inp.alias}}" id="{{inp.alias}}" placeholder="enter here">
+                                </div>
+                            {% else %}
+                                <div class="inpu">
+                                    <label for="{{inp.alias}}">{{inp.name}} :-</label>
+                                    <input type="{{inp.type}}" name="{{inp.alias}}" id="{{inp.alias}}" placeholder="enter here (required)" required>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        <div id="change">
+                            {% if input.type == "Login" %}
+                                Register
+                            {% else %}
+                                Login
+                            {% endif %}
+                        </div>
+                        <button type="submit" class="Submit" data-url="{% url input.type %}">{{input.type}}</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <header>
+        {% block header %}
+            <h1 id="title">DuRecord</h1>
+            <div id="UserProfile" data-url="{% url 'Profile' %}">
+                {% if User %}
+                    <img src="{{User.ProfilePic.url}}" alt="User image">
+                {% endif %}
+            </div>
+        {% endblock header %}
+    </header>
+    <main>
+        {% block main %}
+            <div class="A">
+                <h2>Add Entry?</h2>
+                <form>
+                    {% csrf_token %}
+                    {% for I in I2 %}
+                        {% if I.type == "textarea" %}
+                            <div class="inpu">
+                                <label for="{{I.alias}}">{{I.name}}:-</label>
+                                <textarea id="{{I.alias}}" name="{{I.alias}}" placeholder="enter here (required)" required></textarea>
+                            </div>
+                        {% else %}
+                            <div class="inpu">
+                                <label for="{{I.alias}}">{{I.name}}:-</label>
+                                <input type="{{I.type}}" id="{{I.alias}}" name="{{I.alias}}" placeholder="enter here (required)" required>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <button type="submit" class="Submit" data-url="{% url 'AddData' %}">Add</button>
+                </form>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Date</th>
+                        <th>Work Done</th>
+                        <th>In Time</th>
+                        <th>Out Time</th>
+                        <th>Hours</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for D in Data %}
+                        <tr data-url="{% url 'Datapane' D.id 'view' %}">
+                            <td>{{forloop.counter}}.</td>
+                            <td>{{D.Date}}</td>
+                            <td class="workdone">{{D.WorkDone}}</td>
+                            <td>{{D.InTime}}</td>
+                            <td>{{D.OutTime}}</td>
+                            <td>{{D.hours_worked}} hrs</td>
+                            <td class="edit" data-url="{% url 'Datapane' D.id 'edit' %}">Edit?</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endblock main %}
+    </main>
+    <div id="loading"><span>Loading...</span></div>
+    <footer>
+        <section id="related_links">
+            <h2>Related Links</h2>
+            <div class="links">
+                <ul>
+                    <li>Any Recommendations? Contact:- <a href="https://wa.me/918591166457/">Aditya Solanki</a> </li>
+                </ul>
+            </div>
+        </section>
+        <span id="copyright">&copy; 2026 DuRecord All Rights Reserved.</span>
+    </footer>
+    <script src="{% static 'homepage.js' %}"></script>
+    {% block extrajs %}
+      
+    {% endblock extrajs %}
+</body>
+</html>

@@ -1,0 +1,101 @@
+.div{
+    height: 90%;
+    width: calc((1/6)*100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.span{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.h1{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Back{
+    font-size: 2vw;
+    transition: color 300ms linear, transform 300ms linear;
+}
+#Back:hover{
+    transform: scale(1.1);
+    color: greenyellow;
+    cursor: pointer;
+}
+#description{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#label{
+    height: 10%;
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: orange;
+}
+#answer{
+    height: 70%;
+    width: 90%;
+    border: 5px solid orange;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: rgb(53, 109, 221);
+}
+#Edit{
+    height: 10%;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#Edit span{
+    height: 90%;
+    width: 10%;
+    color: rgb(53, 109, 221);
+    font-size: 1.5vw;
+    transition: color 300ms linear, transform 300ms linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Edit span:hover{
+    transform: scale(1.1);
+    color: orange;
+    cursor: pointer;
+}
+@media screen and (orientation: portrait) {
+    .div{
+        width: calc((1/5)*100%);
+    }
+    .span{
+        height: 40%;
+        font-size: 2.5vw;
+    }
+    .h1{
+        height: 60%;
+        font-size: 4vw;
+    }
+    #Back{
+        font-size: 4vw;
+    }
+    #label{
+        font-size: 5vw;
+    }
+    #Edit span{
+        font-size: 4vw;
+    }
+}

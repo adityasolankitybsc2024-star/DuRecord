@@ -1,0 +1,351 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#login{
+    height: 100vh;
+    width: 100vw;
+    z-index: 300;
+    background-color: rgba(49, 48, 48, 0.884);
+    position: fixed;
+    top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: orange;
+    font-size: 1.3vw;
+}
+.body{
+    height: 50%;
+    width: 50%;
+    background-color: rgb(53, 109, 221);
+    border: 2px solid orange;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 90%;
+    grid-template-rows: 10% 85%;
+    justify-content: center;
+    align-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+}
+.body h1{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.body form{
+    height: 95%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.inpu{
+    height: calc((1/10)*100%);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 55%;
+    grid-template-rows: 80%;
+    justify-content: space-evenly;
+    align-content: center;
+    justify-items: flex-start;
+    align-items: center;
+}
+.inpu input{
+    height: 100%;
+    width: 100%;
+}
+#change{
+    height: calc((1/8)*100%);
+    width: 100%;
+    text-align: right;
+}
+.Submit{
+    height: 20%;
+    width: 50%;
+    color: rgb(53, 109, 221);
+}
+header{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: orange;
+    background-color: rgb(53, 109, 221);
+    z-index: 100;
+    position: sticky;
+    top: 0%;
+}
+#title{
+    height: 90%;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#UserProfile{
+    height: calc(0.9*10vh);
+    width: calc(0.9*10vh);
+    border: 2px solid orange;
+    border-radius: 50%;
+    transition: transform 300ms linear, border 300ms linear;
+    overflow: hidden;
+}
+#UserProfile img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+#UserProfile:hover{
+    transform: scale(1.05);
+    border: 2px solid greenyellow;
+    cursor: pointer;
+}
+main{
+    min-height: 80vh;
+    width: 100vw;
+    background-color: rgb(235, 234, 234);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.A{
+    height: 40vh;
+    width: 50vw;
+    background-color: orange;
+    border: 2px solid rgb(53, 109, 221);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: rgb(53, 109, 221);
+    margin: 5vh 0vw 5vh 0vw;
+}
+.A h2{
+    height: 20%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+}
+.A form{
+    height: 75%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.5vw;
+}
+.inpu textarea{
+    height: 100%;
+    width: 100%;
+    resize: both;
+    padding: 0vh 0vw 2vh 0vw;
+}
+main table{
+    height: 50vh;
+    width: 70vw;
+    background-color: gray;
+    border: 2px solid rgb(53, 109, 221);
+    border-radius: 10px 10px 0px 0px;
+    color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+main table thead{
+    height: 10%;
+    width: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main table thead tr{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 2px solid rgb(53, 109, 221);
+}
+main table thead tr th{
+    height: 100%;
+    width: calc((1/7)*100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main table tbody{
+    height: 80%;
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+main table tbody tr{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 2px solid rgb(53, 109, 221);
+    transition: transform 300ms linear, border-bottom 300ms linear;
+}
+main table tbody tr:hover{
+    border-bottom: 2px solid orange;
+    transform: scale(1.01);
+    cursor: pointer;
+}
+main table tbody tr td{
+    height: 100%;
+    width: calc((1/7)*100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.edit{
+    transition: color 300ms linear;
+}
+.edit:hover{
+    color: greenyellow;
+}
+#loading{
+    height: 10%;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    z-index: 400;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 300ms linear, opacity 300ms linear;
+}
+#loading span{
+    height: 90%;
+    width: 20%;
+    background-color: rgb(53, 109, 221);
+    border: 2px solid orange;
+    border-radius: 20px;
+    color: orange;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    height: 30vh;
+    width: 100vw;
+    color: orange;
+    background-color: rgb(53, 109, 221);
+    display: grid;
+    grid-template-columns: 95%;
+    grid-template-rows: 75% 20%;
+    justify-content: center;
+    align-content: space-evenly;
+}
+#related_links{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 75%;
+    justify-content: center;
+    align-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+}
+#related_links h2{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links{
+    height: 100%;
+    width: 90%;
+}
+.links ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.links li{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+}
+#copyright{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+}
+@media screen and (orientation: portrait) {
+    .body{
+        height: 80%;
+        width: 80%;
+    }
+    .body h1{
+        font-size: 7vw;
+    }
+    .inpu{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+    .inpu label{
+        font-size: 5vw;
+    }
+    #change{
+        font-size: 5vw;
+    }
+    .Submit{
+        height: 10%;
+        width: 50%;
+    }
+    .A{
+        width: 80%;
+    }
+    .A h2{
+        font-size: 5vw;
+    }
+    main table{
+        width: 90vw;
+        font-size: 2.5vw;
+    }
+    #loading span{
+        height: 70%;
+        width: 40%;
+        font-size: 4vw;
+    }
+    .links li{
+        font-size: 3vw;
+    }
+    #copyright{
+        font-size: 4vw;
+    }
+}
