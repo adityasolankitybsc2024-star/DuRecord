@@ -4,7 +4,9 @@ charset-normalizer==3.4.9
 cloudinary==1.45.0
 Django==6.0.7
 django-cloudinary-storage==0.3.0
+gunicorn==26.0.0
 idna==3.18
+packaging==26.2
 pillow==12.3.0
 requests==2.34.2
 six==1.17.0
