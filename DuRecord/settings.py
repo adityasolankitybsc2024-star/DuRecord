@@ -12,19 +12,28 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env()
+environ.Env.read_env(BASE_DIR / ".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+
+# SECURITY WARNING: keep the secret key used in production secret!
+if DEBUG == True:
+    SECRET_KEY = env("SECRET_KEY")
+else:
+    SECRET_KEY = os.environ.get("SECRET_KEY")
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', 'durecord.onrender.com']
 
@@ -77,13 +86,19 @@ WSGI_APPLICATION = 'DuRecord.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'durecord',
+#         'USER': 'aditya',
+#         'PASSWORD': 'AdityaJS#2411',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default' : env.db("DATABASE_URL")
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -115,8 +130,6 @@ USE_TZ = True
 
 USE_I18N = True
 
-USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
@@ -139,3 +152,4 @@ STORAGES = {
     },
 }
 
+CLOUDINARY_URL = env("CLOUDINARY_URL")
