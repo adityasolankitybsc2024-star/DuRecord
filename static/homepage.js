@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         
         change.addEventListener("mouseleave", ()=>{
             change.style.transition = "color 300ms linear";
-            change.style.color = "orange";
+            change.style.color = "rgb(214, 235, 243)";
         });
 
         let toggle = ()=>{

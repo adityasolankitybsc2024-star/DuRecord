@@ -43,17 +43,18 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color: purple;
+    color: rgb(98, 155, 182);
 }
 #answer{
     height: 70%;
     width: 90%;
     border: 5px solid black;
+    background-color: rgb(98, 155, 182);
     box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
     padding: 5px;
     box-sizing: border-box;
     border-radius: 10px;
-    color: purple;
+    color: rgb(214, 235, 243);
 }
 #Edit{
     height: 10%;
@@ -65,7 +66,7 @@
 #Edit span{
     height: 90%;
     width: 10%;
-    color: purple;
+    color: rgb(98, 155, 182);
     font-size: 1.5vw;
     transition: color 300ms linear, transform 300ms linear;
     display: flex;
@@ -74,7 +75,7 @@
 }
 #Edit span:hover{
     transform: scale(1.1);
-    color: black;
+    color: rgb(68, 127, 152);
     cursor: pointer;
 }
 @media screen and (orientation: portrait) {

@@ -6,19 +6,19 @@
     height: 100vh;
     width: 100vw;
     z-index: 300;
-    background-color: rgba(49, 48, 48, 0.884);
+    background-color: rgb(214, 235, 243);
     position: fixed;
     top: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: rgb(214, 235, 243);
     font-size: 1.3vw;
 }
 .body{
     height: 50%;
     width: 50%;
-    background-color: purple;
+    background-color: rgb(98, 155, 182);
     border: 2px solid black;
     border-radius: 20px;
     display: grid;
@@ -67,7 +67,7 @@
 .Submit{
     height: 20%;
     width: 50%;
-    color: purple;
+    color: rgb(98, 155, 182);
 }
 header{
     height: 10vh;
@@ -75,8 +75,8 @@ header{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    color: black;
-    background-color: purple;
+    color: rgb(214, 235, 243);
+    background-color: rgb(98, 155, 182);
     z-index: 100;
     position: sticky;
     top: 0%;
@@ -110,7 +110,7 @@ header{
 main{
     min-height: 80vh;
     width: 100vw;
-    background-color: rgb(235, 234, 234);
+    background-color: rgb(214, 235, 243);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -119,14 +119,14 @@ main{
 .A{
     height: 40vh;
     width: 50vw;
-    background-color: black;
-    border: 2px solid purple;
+    background-color: rgb(98, 155, 182);
+    border: 2px solid black;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    color: purple;
+    color: rgb(214, 235, 243);
     margin: 5vh 0vw 5vh 0vw;
 }
 .A h2{
@@ -155,10 +155,10 @@ main{
 main table{
     height: 50vh;
     width: 70vw;
-    background-color: yellow;
-    border: 2px solid purple;
+    background-color: rgb(185, 219, 225);
+    border: 2px solid black;
     border-radius: 10px 10px 0px 0px;
-    color: black;
+    color: rgb(68, 127, 152);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -177,7 +177,7 @@ main table thead tr{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 2px solid purple;
+    border-bottom: 2px solid black;
 }
 main table thead tr th{
     height: 100%;
@@ -200,11 +200,12 @@ main table tbody tr{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 2px solid purple;
-    transition: transform 300ms linear, border-bottom 300ms linear;
+    border-bottom: 2px solid black;
+    transition: transform 300ms linear, border-bottom 300ms linear, color 300ms linear;
 }
 main table tbody tr:hover{
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgb(68, 127, 152);
+    color: rgb(68, 127, 152);
     transform: scale(1.01);
     cursor: pointer;
 }
@@ -237,10 +238,10 @@ main table tbody tr td{
 #loading span{
     height: 90%;
     width: 20%;
-    background-color: purple;
+    background-color: rgb(98, 155, 182);
     border: 2px solid black;
     border-radius: 20px;
-    color: black;
+    color: rgb(214, 235, 243);
     font-size: 2vw;
     display: flex;
     justify-content: center;
@@ -249,8 +250,8 @@ main table tbody tr td{
 footer{
     height: 30vh;
     width: 100vw;
-    color: black;
-    background-color: purple;
+    color: rgb(214, 235, 243);
+    background-color: rgb(98, 155, 182);
     display: grid;
     grid-template-columns: 95%;
     grid-template-rows: 75% 20%;
@@ -297,11 +298,11 @@ footer{
 }
 .links li a{
     text-decoration: none;
-    color: black;
+    color: rgb(214, 235, 243);
     transition: color 300ms linear;
 }
 .links li a:hover{
-    color: yellowgreen;
+    color: greenyellow;
 }
 #copyright{
     height: 100%;
