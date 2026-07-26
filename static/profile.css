@@ -25,7 +25,7 @@ header span:hover{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    color: rgb(53, 109, 221);
+    color: purple;
     font-size: 1.5vw;
 }
 #bak span{
@@ -34,7 +34,7 @@ header span:hover{
     transition: transform 300ms linear, color 300ms linear;
 }
 #bak span:hover{
-    color: orange;
+    color: black;
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -48,20 +48,20 @@ main section{
     align-content: center;
     justify-items: center;
     align-items: center;
-    background-color: orange;
-    border: 2px solid rgb(53, 109, 221);
+    background-color: black;
+    border: 2px solid purple;
     border-radius: 20px;
 }
 #UserImg{
     height: 100%;
     width: 100%;
-    border: 2px solid rgb(53, 109, 221);
+    border: 2px solid purple;
     border-radius: 20px;
 }
 .data{
     height: 100%;
     width: 100%;
-    color: rgb(53, 109, 221);
+    color: purple;
     font-size: 2.2vw;
     display: flex;
     flex-direction: column;
