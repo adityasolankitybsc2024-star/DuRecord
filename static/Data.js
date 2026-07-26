@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         let FormSubmit = ()=>{
             let Newdata = new FormData()
             Forms.forEach((Form)=>{
-                let inputs = Form.querySelectorAll("input");
+                let inputs = Form.querySelectorAll("input, textarea");
                 inputs.forEach((inp)=>{
                     Newdata.append(inp.name, inp.value);
                 });
