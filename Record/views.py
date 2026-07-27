@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
-Inputs = [{"type":"Login", "inputs":[{"name":"Username", "type":"text", "alias":"username"}, {"name":"Password", "type":"password", "alias":"password"}]}, {"type":"Register", "inputs":[{"name":"Name", "type":"text", "alias":"name"}, {"name":"Email", "type":"email", "alias":"email"}, {"name":"Password", "type":"password", "alias":"password"}, {"name":"Profile Picture", "type":"file", "alias":"Profpic"}, {"name":"Institution", "type":"text", "alias":"institution"}, {"name":"Professor", "type":"text", "alias":"prof"}, {"name":"Topic", "type":"text", "alias":"topic"}]}]
+Inputs = [{"type":"Login", "inputs":[{"name":"Username", "type":"text", "alias":"username"}, {"name":"Password", "type":"password", "alias":"password"}]}, {"type":"Register", "inputs":[{"name":"Username", "type":"text", "alias":"name"}, {"name":"Email", "type":"email", "alias":"email"}, {"name":"Password", "type":"password", "alias":"password"}, {"name":"Profile Picture", "type":"file", "alias":"Profpic"}, {"name":"Institution", "type":"text", "alias":"institution"}, {"name":"Professor", "type":"text", "alias":"prof"}, {"name":"Topic", "type":"text", "alias":"topic"}]}]
 # Create your views here.
 def homepage(request):
     Inputs2 = [{"name":"Date", "type":"date", "alias":"date"}, {"name":"Work Done", "type":"textarea", "alias":"work"}, {"name":"In Time", "type":"time", "alias":"in"}, {"name":"Out time", "type":"time", "alias":"out"}]
