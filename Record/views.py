@@ -40,10 +40,10 @@ def Register(request):
             user.set_password(password)
             user.save()
 
-            models.Profile.objects.Create(user = user, ProfilePic = Profpic, Institution = institution, Professor = prof, Topic = topic)
+            models.Profile.objects.create(user = user, ProfilePic = Profpic, Institution = institution, Professor = prof, Topic = topic)
             return JsonResponse({"status":"success", "message":"User Registered Successfully"})
         except IntegrityError as e:
-            return JsonResponse({"status":"failure", "message":"Entered email already exixts in the database"})
+            return JsonResponse({"status":"failure", "message":"This Username already exixts in the database"})
         
             
 def Login(request):

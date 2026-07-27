@@ -1,8 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from datetime import datetime
-from cloudinary_storage.storage 
-import MediaCloudinaryStorage
+from cloudinary_storage.storage import MediaCloudinaryStorage
 from django.contrib.auth.models import User
 
 # Create your models here.
