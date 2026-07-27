@@ -1,8 +1,8 @@
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
-from .models import User
+from .models import Profile
 
-@receiver(post_delete, sender=User)
+@receiver(post_delete, sender=Profile)
 def delete_user_image(sender, instance, **kwargs):
     if instance.ProfilePic:
         try:
