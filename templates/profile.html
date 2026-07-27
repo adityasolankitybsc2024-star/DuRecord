@@ -4,26 +4,26 @@
     <link rel="stylesheet" href="{% static 'profile.css' %}">
 {% endblock extracss %}
 {% block header %}
-    <h1>Welcome {{User.name}} !</h1>
+    <h1>Welcome {{User.username}} !</h1>
     <span id="logout" data-url="{% url 'Logout' %}">Logout?</span>
 {% endblock header %}
 {% block main %}
     <div id="bak"><span data-url="{% url 'Homepage' %}">back</span></div>
     <section>
-        <img src="{{User.ProfilePic.url}}" alt="User Image" id="UserImg">
+        <img src="{{User.profile.ProfilePic.url}}" alt="User Image" id="UserImg">
         <ul class="data">
-            <li><b>Name: </b> {{User.name}}</li>
+            <li><b>Name: </b> {{User.username}}</li>
             <li><b>Email: </b> {{User.email}}</li>
-            <li><b>Institution: </b> {{User.Institution}}</li>
-            <li><b>Professor: </b> {{User.Professor}}</li>
+            <li><b>Institution: </b> {{User.profile.Institution}}</li>
+            <li><b>Professor: </b> {{User.profile.Professor}}</li>
             <li>
                 {% if User.Topic %}
-                    <b>Topic: </b> {{User.Topic}}
+                    <b>Topic: </b> {{User.profile.Topic}}
                 {% else %}
                     <b>Topic: </b> Topic Not yet Entered...
                 {% endif %}
             </li>
-            <li><b>Total Hours:</b> {{User.Total_Hours}}</li>
+            <li><b>Total Hours:</b> {{User.profile.Total_Hours}}</li>
         </ul>
     </section>
 {% endblock main %}

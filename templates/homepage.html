@@ -54,7 +54,7 @@
             <h1 id="title">DuRecord</h1>
             <div id="UserProfile" data-url="{% url 'Profile' %}">
                 {% if User %}
-                    <img src="{{User.ProfilePic.url}}" alt="User image">
+                    <img src="{{User.profile.ProfilePic.url}}" alt="User image">
                 {% endif %}
             </div>
         {% endblock header %}
