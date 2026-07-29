@@ -27,7 +27,7 @@ environ.Env.read_env(BASE_DIR / ".env")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # SECURITY WARNING: keep the secret key used in production secret!
 if DEBUG == True:
