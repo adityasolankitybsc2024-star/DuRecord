@@ -17,7 +17,7 @@
             <li><b>Institution: </b> {{User.profile.Institution}}</li>
             <li><b>Professor: </b> {{User.profile.Professor}}</li>
             <li>
-                {% if User.Topic %}
+                {% if User.profile.Topic %}
                     <b>Topic: </b> {{User.profile.Topic}}
                 {% else %}
                     <b>Topic: </b> Topic Not yet Entered...
