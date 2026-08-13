@@ -38,7 +38,7 @@ header span:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
-main section{
+.section{
     height: calc(0.8*80vh);
     width: 90%;
     display: grid;
@@ -57,6 +57,15 @@ main section{
     width: 100%;
     border: 2px solid black;
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#UserImg img{
+    height: 100%;
+    width: auto;
+    overflow: hidden;
+    border-radius: 20px;
 }
 .data{
     height: 100%;
@@ -68,7 +77,7 @@ main section{
     justify-content: space-evenly;
     align-items: flex-end;
 }
-.data li{
+.li{
     height: calc((1/7)*100%);
     width: 100%;
     text-decoration: none;
@@ -76,6 +85,25 @@ main section{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+#edit{
+    height: calc(0.1*80vh);
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: rgb(98, 155, 182);
+    font-size: 1.5vw;
+}
+#edit span{
+    height: auto;
+    width: auto;
+    transition: transform 300ms linear, color 300ms linear;
+}
+#edit span:hover{
+    color: greenyellow;
+    cursor: pointer;
+    transform: scale(1.1);
 }
 @media screen and (orientation:portrait) {
     header h1{
@@ -88,11 +116,15 @@ main section{
         height: calc(0.02*80vh);
         font-size: 4vw;
     }
-    main section{
+    .section{
         grid-template-columns: 95%;
         grid-template-rows: 40% 50%;
     }
     .data{
+        font-size: 4vw;
+    }
+    #edit{
+        height: calc(0.02*80vh);
         font-size: 4vw;
     }
 }

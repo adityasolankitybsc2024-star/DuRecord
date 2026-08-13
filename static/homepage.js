@@ -137,12 +137,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
     });
     
     let Profile = document.querySelector("#UserProfile");
-    Profile.addEventListener("click", ()=>{
-        window.location.href = Profile.dataset.url;
-    });
+    if (Profile) {
+        Profile.addEventListener("click", ()=>{
+            window.location.href = Profile.dataset.url;
+        });
+    }
     
     let AddEntry = document.querySelector(".A form");
-    let button = AddEntry.querySelector("button");
+    if (AddEntry) {
+        var button = AddEntry.querySelector("button");
+        
+    }
     
     let Adding = (fom, butt)=>{
         let formData = new FormData(fom);
@@ -171,31 +176,37 @@ document.addEventListener("DOMContentLoaded", ()=>{
         });
     };
     
-    AddEntry.addEventListener("submit", (e)=>{
-        e.preventDefault();
-        Adding(AddEntry, button);
-    });
+    if (AddEntry) {
+        AddEntry.addEventListener("submit", (e)=>{
+            e.preventDefault();
+            Adding(AddEntry, button);
+        });
+    }
     
     let UniqueDatas = document.querySelectorAll("main table tbody tr");
-    UniqueDatas.forEach((UD)=>{
-        UD.addEventListener("click", (event)=>{
-            let editbutton = UD.querySelector(".edit");
-            if (editbutton.contains(event.target)) {
-                window.location.href = editbutton.dataset.url;
-            }
-            else {
-                window.location.href = UD.dataset.url;
-            }
+    if (UniqueDatas) {
+        UniqueDatas.forEach((UD)=>{
+            UD.addEventListener("click", (event)=>{
+                let editbutton = UD.querySelector(".edit");
+                if (editbutton.contains(event.target)) {
+                    window.location.href = editbutton.dataset.url;
+                }
+                else {
+                    window.location.href = UD.dataset.url;
+                }
+            });
         });
-    });
+    }
 
     let sentences = document.querySelectorAll(".workdone");
-    sentences.forEach((sentence)=>{
-        let Sentence = sentence.textContent;
-        if (Sentence.length >= 35) {
-            let replace = "...";
-            let acceptable = Sentence.substring(0, 35);
-            sentence.textContent = acceptable + replace;
-        }
-    });
+    if (sentences) {
+        sentences.forEach((sentence)=>{
+            let Sentence = sentence.textContent;
+            if (Sentence.length >= 35) {
+                let replace = "...";
+                let acceptable = Sentence.substring(0, 35);
+                sentence.textContent = acceptable + replace;
+            }
+        });
+    }
 });

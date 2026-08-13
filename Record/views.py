@@ -64,9 +64,9 @@ def Login(request):
             return JsonResponse({"status":"failure", "message":"This email is not registered in the database."})
             
 
-def Profile(request):
-    user = User.objects.get(id = request.session["user_id"])
-    return render(request, "profile.html", {"User":user, "Inputs":Inputs})
+# def Profile(request):
+#     user = User.objects.get(id = request.session["user_id"])
+#     return render(request, "profile.html", {"User":user, "Inputs":Inputs})
 
 def Logout(request):
     request.session.flush()
@@ -98,8 +98,30 @@ def Datapane(request, id, Type):
             Data.WorkDone = request.POST.get("WD")
 
             Data.save()
-            return JsonResponse({"status":"success", "message":"Data Changed Successfully", "redirect":reverse(Datapane, kwargs={"id":id, "Type":"view"})})
+            return JsonResponse({"status":"success", "message":"Data Changed Successfully", "redirect":reverse("Datapane", kwargs={"id":id, "Type":"view"})})
         except IntegrityError as e:
             return JsonResponse({"status":"failure", "message":str(e)})
 
     return render(request, "Data.html", {"User":user, "Hours":Data.hours_worked, "type":Type, "Info":Info, "Data":Data})
+
+def Profilepane(request, Type):
+    user = User.objects.get(id = request.session["user_id"])
+    if (Type == "edit") and (request.method == "POST"):
+        try:
+            img = request.FILES.get("userimage")
+            if img and not (img == None):
+                user.profile.ProfilePic = img
+            user.username = request.POST.get("name")
+            user.email = request.POST.get("email")
+            user.profile.Institution = request.POST.get("inst")
+
+            user.profile.Topic = request.POST.get("topic")
+
+            user.save()
+            user.profile.save()
+            return JsonResponse({"status":"success", "message":"Profile Updated Successfully!", "redirect":reverse("Profile", kwargs={"Type":"view"})})
+
+        except IntegrityError as e:
+            return JsonResponse({"status":"failure", "message":str(e)})
+            
+    return render(request, "profile.html", {"User":user, "Inputs":Inputs, "Type":Type})
