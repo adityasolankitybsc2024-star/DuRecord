@@ -194,6 +194,10 @@ main table tbody{
     justify-content: space-evenly;
     align-items: center;
     overflow-y: scroll;
+    scrollbar-width: none;
+}
+main table tbody::-webkit-scrollbar{
+    display: none;
 }
 main table tbody tr{
     height: 20%;
